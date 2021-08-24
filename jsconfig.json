@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+      "baseUrl": "./src",
+      "paths": {
+        "components/*": ["src/components/*"],
+        "screens/*": ["src/screens/*"],
+        "assets/*": ["src/assets/*"],
+        "navigation/*":["src/navigation/*"],
+        "apirequests/*":["src/apirequests/*"]
+      }
+    }
+  }
