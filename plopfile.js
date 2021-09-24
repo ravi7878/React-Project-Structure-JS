@@ -100,9 +100,28 @@ const screenGenerator = {
     return actions;
   },
 };
-
+const storegenerate = {
+  description: "Create a new Store",
+  prompts: [],
+  actions: ({ stateless }) => {
+    const actions = [
+      {
+        type: "add",
+        path: "./src/Redux/Reducer/RootReducer.js",
+        templateFile: "plop-templates/RootReducer.js.hbs",
+      },
+      {
+        type: "add",
+        path: "./src/Redux/Store.js",
+        templateFile: "plop-templates/Store.js.hbs",
+      },
+    ];
+    return actions;
+  },
+};
 module.exports = (plop) => {
   plop.setGenerator("component", componentGenerator);
   plop.setGenerator("screen", screenGenerator);
   plop.setGenerator("hooks", hooksGenerator);
+  plop.setGenerator("store", storegenerate);
 };
