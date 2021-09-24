@@ -1,0 +1,27 @@
+import { types } from "../Types";
+const initialState = {
+data_loaded: false,
+data_list: undefined,
+error: {},
+};
+
+const {{pascalCase name}} = (state = initialState, action) => {
+switch (action.type) {
+case types.TYPE1:
+return {
+...state,
+user: action.payload,
+};
+
+case types.TYPE2:
+return {
+...state,
+loading: false,
+user: action.payload,
+error: {},
+};
+default:
+return state;
+}
+};
+export default {{pascalCase name}} ;

@@ -107,13 +107,39 @@ const storegenerate = {
     const actions = [
       {
         type: "add",
-        path: "./src/Redux/Reducer/RootReducer.js",
+        path: "./src/redux/Store.js",
+        templateFile: "plop-templates/Store.js.hbs",
+      },
+      {
+        type: "add",
+        path: "./src/redux/Reducer/RootReducer.js",
         templateFile: "plop-templates/RootReducer.js.hbs",
       },
       {
         type: "add",
-        path: "./src/Redux/Store.js",
-        templateFile: "plop-templates/Store.js.hbs",
+        path: "./src/redux/Types.js",
+        templateFile: "plop-templates/Types.js.hbs",
+      },
+    ];
+    return actions;
+  },
+};
+const reducergenerate = {
+  description: "Create a new reducer",
+  prompts: [
+    {
+      type: "input",
+      name: "name",
+      message: "Reducer name?",
+      default: "authReducer",
+    },
+  ],
+  actions: ({ stateless }) => {
+    const actions = [
+      {
+        type: "add",
+        path: "./src/redux/Reducer/{{pascalCase name}}.jsx",
+        templateFile: "plop-templates/Reducer.js.hbs",
       },
     ];
     return actions;
@@ -124,4 +150,5 @@ module.exports = (plop) => {
   plop.setGenerator("screen", screenGenerator);
   plop.setGenerator("hooks", hooksGenerator);
   plop.setGenerator("store", storegenerate);
+  plop.setGenerator("reducer", reducergenerate);
 };

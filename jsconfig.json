@@ -6,7 +6,8 @@
         "screens/*": ["src/screens/*"],
         "assets/*": ["src/assets/*"],
         "navigation/*":["src/navigation/*"],
-        "apirequests/*":["src/apirequests/*"]
+        "apirequests/*":["src/apirequests/*"],
+        "redux/*":["src/redux/*"],
       }
     }
   }
